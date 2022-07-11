@@ -1,22 +1,25 @@
 #include "main.h"
 
 /**
- * get_print - selects the right printing function
+ **get_print - selects the right printing function
  * depending on the conversion specifier passed to _printf
  * @s: character that holds the conversion specifier
+ * Return: the resulting null byte
  */
-	int (*get_print(char s))(va_list, flags_t *)
+int (*get_print(char s))(va_list, flags_t *)
 {
 	pt functs[] = {
-	    {'c', print_char},
-	    {'s', print_string},
-	    {'%', print_percent}
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent}
 		};
-		int flags = 3;
-		register int a;
-		for (a = 0; a < flags; a++)
+	int flags = 3;
+
+	register int a;
+
+	for (a = 0; a < flags; a++)
 	if (functs[a].fs == s)
-			return (functs[a].printer);
+	return (functs[a].printer);
 	return (NULL);
 }
 /**
@@ -98,4 +101,3 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
-
