@@ -32,10 +32,18 @@ typedef struct printType
 
 int _putchar(char c);
 int _puts(char *str);
-int _printf(const char *format, ...);
 int print_char(va_list l, flags_t *printer);
 int print_string(va_list l, flags_t *printer);
 int print_percent(va_list l, flags_t *printer);
+char *convert(unsigned long int num, int base, int lowercase);
+/* _printf */
+int _printf(const char *format, ...);
+int get_flag(char s, flags_t *printer);
+int (*get_print(char s))(va_list, flags_t *);
+/* print_nums */
+int print_int(va_list l, flags_t *printer);
+void print_number(int n);
+int count_digit(int i);
+
 
 #endif // MAIN_H
-
