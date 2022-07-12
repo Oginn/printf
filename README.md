@@ -1,4 +1,4 @@
-# 0x11. C - printf
+# 0x11 C - printf
 
 ## Description
 This team project is part of the first collaboration of ALX Software Engineering programme. 
