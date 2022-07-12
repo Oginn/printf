@@ -150,8 +150,7 @@ int write_num(int ind, char buffer[],
  * Return: Number of written chars.
  */
 int write_unsgnd(int is_negative, int ind,
-	char buffer[],
-	int flags, int width, int precision, int size)
+	char buffer[], int flags, int width, int precision, int size)
 {
 	/* The number is stored at the bufer's right and starts at position i */
 	int length = BUFF_SIZE - ind - 1, i = 0;
@@ -250,4 +249,3 @@ int write_pointer(char buffer[], int ind, int length,
 		buffer[--ind] = extra_c;
 	return (write(1, &buffer[ind], BUFF_SIZE - ind - 1));
 }
-
